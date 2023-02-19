@@ -1,31 +1,10 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <SDL2/SDL.h>
-
-// Functions //
-bool setup(void);
-void cleanup(void);
+#include "system.h"
 
 int main(void)
 {
-  setup();
+  setup_system();
 
-  cleanup();
+  cleanup_system();
 
   return 0;
-}
-
-bool setup(void)
-{
-  if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
-    fprintf(stderr, "Error: Unable to initialize SDL.\n");
-    return false;
-  }
-
-  return true;
-}
-
-void cleanup(void)
-{
-  SDL_Quit();
 }
